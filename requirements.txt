@@ -1,0 +1,14 @@
+click==8.0.4
+colorama==0.4.4
+distlib==0.3.4
+filelock==3.6.0
+Flask==2.0.3
+itsdangerous==2.1.0
+Jinja2==3.0.3
+MarkupSafe==2.1.0
+platformdirs==2.5.1
+six==1.16.0
+virtualenv==20.13.2
+Gunicorn==20.0.4
+Werkzeug==2.0.3
+Flask-MySQLdb

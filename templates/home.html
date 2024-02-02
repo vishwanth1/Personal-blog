@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="{{url_for('home')}}">Home</a>
+  <a href="{{url_for('projectDetails')}}">Projects</a>
+  <a href="{{url_for('skills')}}">Skillset</a>
+  <a href="{{url_for('education')}}">Education</a>
+  <a href="{{url_for('about')}}">About</a>
+  <a href="{{url_for('contact')}}">Contact</a>
+  <div class="topnav-right">
+    <a href="{{url_for('logout')}}">LogOut</a>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Short Bio</title>
+	<style>
+  @charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  font-family: 'Quicksand', sans-serif;
+ color: rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  font-size: 14px;
+  overflow: hidden;
+  background: white;
+}
+label {
+  padding: 0;
+  margin: 0;
+}
+ul, li, ol {
+  padding: 0;
+  margin: 0;
+}
+li{
+  list-style: none;
+}
+a, img {
+  border: 0;
+  outline: none;
+  text-decoration: none;
+}
+input::-moz-focus-inner {
+  border: 0;
+}
+bo {
+  outline: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  border-radius: 30px;
+}
+input, select, textarea, button{
+  font-family: 'Muli', sans-serif;
+}
+input:focus, select:focus, textarea:focus, button:focus{
+  outline: 0;
+}
+
+a {
+  color: inherit;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
+
+
+p {
+  margin-bottom: 1.5em; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: 400;
+  margin: 0 0 30px 0; }
+
+
+i.material-icons {
+  font-size: inherit;
+  line-height: inherit;
+}
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+  width: 5px;
+  height: 5px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #777;
+}
+
+.t-title-size{
+  font-size: 18px;
+}
+.t-bold{
+  font-weight: 600;
+}
+.t-normal{
+  font-weight: normal;
+}
+.t-center{
+  text-align: center;
+}
+.t-right{
+  text-align: right;
+}
+
+.p-5{
+  padding: 5px;
+}
+.p-10{
+  padding: 10px;
+}
+.p-15{
+  padding: 15px;
+}
+.p-20{
+  padding: 20px;
+}
+.p-25{
+  padding: 25px;
+}
+.p-30{
+  padding: 30px;
+}
+.p-35{
+  padding: 35px;
+}
+.p-40{
+  padding: 40px;
+}
+.p-45{
+  padding: 45px;
+}
+.p-50{
+  padding: 50px;
+}
+
+.p-right5{
+  padding-right: 5px;
+}
+.p-right10{
+  padding-right: 10px;
+}
+.p-right15{
+  padding-right: 15px;
+}
+.p-right20{
+  padding-right: 20px;
+}
+.p-right25{
+  padding-right: 25px;
+}
+.p-right30{
+  padding-right: 30px;
+}
+
+.p-left5{
+  padding-left: 5px;
+}
+.p-left10{
+  padding-left: 10px;
+}
+.p-left15{
+  padding-left: 15px;
+}
+.p-left20{
+  padding-left: 20px;
+}
+.p-left25{
+  padding-left: 25px;
+}
+.p-left30{
+  padding-left: 30px;
+}
+
+.m-5{
+  margin:: 5px;
+}
+.m-10{
+  margin: 10px;
+}
+.m-15{
+  margin: 15px;
+}
+.m-20{
+  margin: 20px;
+}
+.m-25{
+  margin: 25px;
+}
+.m-30{
+  margin: 30px;
+}
+.m-35{
+  margin: 35px;
+}
+.m-40{
+  margin: 40px;
+}
+.m-45{
+  margin: 45px;
+}
+.m-50{
+  margin: 50px;
+}
+
+.d-flex{
+  display: flex;
+}
+.d-flex-align-center{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.d-flex-align-center-column{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.flex-1{
+  flex: 1;
+}
+.flex-2{
+  flex: 2;
+}
+
+.wraper {
+    width: 100%;
+    height: 100%;
+    margin-left: -12px;
+}
+
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.left-content {
+    width: 300px;
+    overflow-y: auto;
+    height: 100%;
+    background: #fff;
+    border-right: 1px solid rgba(221, 221, 221, 0.38);
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    margin-left: 10px;
+    background: #ebe4e447;
+    border-left: 1px solid rgba(221, 221, 221, 0.38);
+}
+.logo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo a {
+    color: #fff;
+    text-align: right;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 30px;
+    font-weight: 500;
+}
+
+
+.foot-contact, .social-icons ul, .copy-rights {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-icons ul li {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+
+
+.social-icons ul li a {
+    padding: 5px 8px;
+    font-size: 16px;
+}
+
+
+.social-icons ul li a:hover {
+  color: #000;
+  transform: scale(1.2) translateY(-5px);
+}
+.user-profile {
+    padding-left: 50px;
+}
+
+.sm-text {
+    letter-spacing: 2.1px;
+    font-weight: normal;
+    color: #222222;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+}
+
+.name {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 15px 0px;
+    color: #222222;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+}
+
+.role {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #222222;
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #222222;
+    font-family: none;
+}
+
+.pr-list {
+    margin: 30px 0px;
+    color: black;
+    font-weight: 600;
+}
+
+.pr-list ul li {
+    margin-bottom: 8px;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-size: 16px;
+    color: #222222;
+    font-family: none;
+}
+
+.pr-list ul li i {
+    width: 18px;
+}
+.social-icons-head ul {
+    display: flex;
+}
+
+.social-icons-head ul li a {
+    padding: 5px 10px;
+    font-size: 22px;
+    transition: all .3s;
+        display: flex;
+}
+
+.social-icons-head {}
+
+.social-icons-head ul li:nth-child(1) a {
+    padding-left: 0;
+}
+
+.social-icons-head ul li a:hover {
+    color: #000;
+    transform: scale(1.2) translateY(-5px);
+}
+.sec-title {
+    margin-bottom: 50px;
+}
+
+.pg-title {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 1.8;
+    color: #000;
+}
+
+</style>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="wraper">
+		<div class="container">
+		<div class="main-content">
+			<div class="section1 p-30" id="Home">
+			<div class="sec-title">
+	<div class="pg-title">My Profile</div>
+			</div>
+				<div class="d-flex-align-center">
+				<div class="user-img flex-1"><img src="static/profilepic.jpeg"></div>
+				<div class="user-profile flex-1">
+					<div class="pro-details">
+						<div class="sm-text">HELLO EVERYONE, I AM</div>
+						<div class="name">Vishwanth Geddam</div>
+						<div class="role">Fulll Stack Developer</div>
+
+					</div>
+					<div class="text">
+            I have consistently focused on meaningful roads for quenching my thirst to learn something new every day. Each invention of technology I have encountered has always fascinated me of the incredible things mankind can achieve. My enthusiasm towards technology and computer applications have begun even before I have known what those terms mean. I have spent my childhood playing hordes of computer games with great zeal. I always wondered how they were developed and what were behind the scenes. My inquisitiveness towards it plays a crucial role in the career path I have chosen.
+            </div>
+            <br>
+          <div class="text">
+Today when I look back to how far I have come, I’m really proud to have completed my Under graduation in computer science and engineering along with 2 years of IT experience working at ValueLabs for clients such as United Airlines and Shutterfly with skill set of Angular Js, Spring boot, HTML, CSS and JSP. I’m also a certified JavaScript developer, currently doing my masters in Computer Science at Texas A&M University.
+</div>
+					<div class="pr-list">
+						<ul>
+							<li><i class="fa fa-calendar" aria-hidden="true"></i> 07th May, 1999</li>
+							<li><i class="fa fa-phone" aria-hidden="true"></i> 9377897753 </li>
+							<li><i class="fa fa-envelope" aria-hidden="true"></i> vgeddam1@leomail.tamuc.edu </li>
+							<li><i class="fa fa-map-marker" aria-hidden="true"></i> Commerce, Texas, USA</li>
+						</ul>
+					</div>
+			<div class="social-icons-head">
+					<ul>
+						<li><a href="https://www.linkedin.com/in/vishwanth-geddam-b4a425106/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+
+				</div>
+			</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

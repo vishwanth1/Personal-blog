@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Education details</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a  href="{{url_for('home')}}">Home</a>
+  <a href="{{url_for('projectDetails')}}">Projects</a>
+  <a href="{{url_for('skills')}}">Skillset</a>
+  <a class="active" href="{{url_for('education')}}">Education</a>
+  <a href="{{url_for('about')}}">About</a>
+  <a href="{{url_for('contact')}}">Contact</a>
+  <div class="topnav-right">
+    <a href="{{url_for('logout')}}">LogOut</a>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+<head>
+<title>About Me</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+.w3-container{
+  margin: 15px;
+}
+</style>
+</head>
+
+<body class="w3-light-grey">
+
+<div class="w3-container w3-card w3-white">
+  <h2 class="w3-text-black w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education Details</h2>
+  <div class="w3-container">
+    <h5 class="w3"><b>Masters</b></h5>
+    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>January 2022 - Present</h6>
+    <p> currently studying at Texas A&M University Commerce </p>
+    <p> Branch: Computer and Information Science </p>
+    <p> Have Good Understanding in:</p>
+    <p> &emsp; Data Structure and Algorithm Analysis</p>
+    <p> &emsp; Networking </p>
+    <p> &emsp; Algorithm Design </p>
+    <p> &emsp; Operating Systems </p>
+    <hr>
+  </div>
+  <div class="w3-container">
+    <h5 class="w3"><b>Batchelor of Technology</b></h5>
+    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>June 2016 - May 2020</h6>
+    <p>Vignan's Foundation For Science Technology And Res - Guntur</p>
+    <p>   GPA: 8.9</p>
+    <p>   Received yearly Scholarship from the University for four academic
+       years of 2016-2020</p>
+    <p>   Received yearly Merit Scholarship by Road Transport Corporation
+       for three academic years of 2016- 2019.</p>
+    <p>   Volunteered as Core registration Co-Ordinator for Srujanankura, a
+       nationwide technical event</p>
+    <hr>
+  </div>
+  <div class="w3-container">
+    <h5 class="w3"><b>Intermediate M.P.C</b></h5>
+    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>June 2014 - April 2016</h6>
+    <p> Studied at Sri Chaitanya Junior College </p>
+    <p> Branch: MPC </p>
+    <p> Scored 979 out of 1000 </p>
+    <hr>
+  </div>
+  <div class="w3-container">
+    <h5 class="w3"><b>SSC</b></h5>
+    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>June 2013 - May 2014</h6>
+    <p> Studied at Sri Chaitanya Techno School</p>
+    <p> GPA: 9.5 </p>
+    <br>
+  </div>
+</div>
+</body>

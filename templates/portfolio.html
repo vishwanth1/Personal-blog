@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: url('static/blog.jpg');
+      background-size: 1369px 700px;
+
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="{{url_for('home')}}">Home</a>
+  <a class="active" href="{{url_for('projectDetails')}}">Projects</a>
+  <a href="{{url_for('skills')}}">Skillset</a>
+  <a href="{{url_for('education')}}">Education</a>
+  <a href="{{url_for('about')}}">About</a>
+  <a href="{{url_for('contact')}}">Contact</a>
+  <div class="topnav-right">
+    <a href="#about">LogOut</a>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<style>
+	/*add full-width input fields*/
+	input[type=text],
+	input[type=password] {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 2px solid #ccc;
+		box-sizing: border-box;
+	}
+	/* set a style for all buttons*/
+	button {
+    background-color: #04AA6D;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		cursor: pointer;
+		width: 100%;
+	}
+	/*set styles for the cancel button*/
+	.cancelbtn {
+		padding: 14px 20px;
+		background-color: #FF2E00;
+	}
+	/*float cancel and signup buttons and add an equal width*/
+	.cancelbtn,
+	.signupbtn {
+		float: left;
+		width: 50%
+	}
+  .signupbtn{
+    background-color: #04AA6D;
+  }
+	/*add padding to container elements*/
+	.container {
+		padding: 16px;
+	}
+	/*define the modal’s background*/
+
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgb(0, 0, 0);
+		background-color: rgba(0, 0, 0, 0.4);
+		padding-top: 60px;
+	}
+	/*define the modal-content background*/
+
+	.modal-content {
+		background-color: #fefefe;
+		margin: 5% auto 15% auto;
+		border: 1px solid #888;
+		width: 80%;
+	}
+	/*define the close button*/
+
+	.close {
+		position: absolute;
+		right: 35px;
+		top: 15px;
+		color: #000;
+		font-size: 40px;
+		font-weight: bold;
+	}
+	/*define the close hover and focus effects*/
+
+	.close:hover,
+	.close:focus {
+		color: red;
+		cursor: pointer;
+	}
+
+	.clearfix::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+
+	@media screen and (max-width: 300px) {
+		.cancelbtn,
+		.signupbtn {
+			width: 100%;
+		}
+	}
+</style>
+
+<body>
+
+	<!--Step 1:Adding HTML-->
+	<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left: 45%;
+  margin-top: 5px;">Add Projects</button>
+
+	<div id="id01" class="modal">
+		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+		<form class="modal-content animate" action="{{ url_for('addProjects')}}" method="post">
+			<div class="container">
+        <label><b>portfolio</b></label>
+				<input type="text" placeholder="Enter domain name" name="portfolio" required>
+
+				<label><b>projectTitle</b></label>
+				<input type="text" placeholder="Enter project name" name="projectTitle" required>
+
+				<label><b>duration</b></label>
+				<input type="text" placeholder="Enter duration" name="duration" required>
+
+				<label><b>Short Description</b></label>
+				<input type="text" placeholder="Short Description" name="description" required>
+
+        <label><b>Technologies</b></label>
+        <input type="text" placeholder="Enter the Technologies used" name="technologies" required>
+
+				<div class="clearfix">
+					<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+					<button type="submit" class="signupbtn">Add Projects</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!--close the modal by just clicking outside of the modal-->
+	<script>
+		var modal = document.getElementById('id01');
+
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
+
+</body>
+</html>
+
+
+
+
+<html>
+<head>
+<title>My Projects</title>
+    <link rel="stylesheet" type="text/css" href="../static/portfolio.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section id="Projects">
+        <div class="container">
+            <h1 class="text-center" style="color: white;">Projects</h1>
+            <div class="row">
+              {% for row in data %}
+                <div class="col-lg-4 mt-4">
+                    <div class="card servicesText">
+                        <div class="card-body">
+                            <h4 class="card-title mt-3">{{row.portfolio}}</h4>
+                            <p class="card-text mt-3"><strong>Project Title:</strong> {{ row.ProjectTitle }}
+                              <p class="card-text mt-3"><strong>Duration:</strong> {{ row.Duration }}
+                                <p class="card-text mt-3"><strong>Description:</strong> {{ row.ShortDescription }}
+                                  <p class="card-text mt-3"><strong>Technologies:</strong> {{ row.TechnologiesUsed }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</body>
+</html>
